@@ -12,6 +12,8 @@ export default function Form({
     history.goBack();
   };
 
+  
+
   return (
     initialformData && (
       <form onSubmit={handleSubmit} className="form-group">
@@ -44,16 +46,18 @@ export default function Form({
             />
           </div>
           <div className="pb-1">
-            <input
-              type="tel"
-              name="mobile_number"
-              className="form-control"
-              id="mobile_number"
-              placeholder={initialformData?.mobile_number || "Mobile number"}
-              value={initialformData?.mobile_number}
-              onChange={handleFormChange}
-              required
-            />
+          <input
+  type="tel"
+  name="mobile_number"
+  className="form-control"
+  id="mobile_number"
+  placeholder={initialformData?.mobile_number || "Mobile number"}
+  value={initialformData?.mobile_number}
+  onChange={handleFormChange}
+  pattern="[0-9]*"
+  required
+/>
+
           </div>
           <div className="pb-1">
             <input
